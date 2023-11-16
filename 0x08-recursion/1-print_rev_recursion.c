@@ -3,7 +3,7 @@
 /**
  * _print_rev_recursion - A recursive function that print a string in reverse
  *
- * @s: pointer to the string - input string
+ * @s: pointer to the string - input string to be printed
  *
  * Return: nothing
  *
@@ -12,8 +12,8 @@
 void _print_rev_recursion(char *s)
 {
 	if (*s != '\n')
-	{	_putchar(*s);
-		_print_rev_recursion(s + 1);
+	{	_print_rev_recursion(s + 1);
+		_putchar(*s)
 	}
 	if (*s == '\n')
 		_putchar('\n');
