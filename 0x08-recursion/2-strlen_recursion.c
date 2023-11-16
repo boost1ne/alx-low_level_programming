@@ -5,15 +5,14 @@
  *
  * @s: given string input
  *
- * Return: 0 (success) and 1 in case of error
+ * Return: string's length
 **/
 
 int _strlen_recursion(char *s)
 {
 	if (*s != '\0')
 	{
-		_strlen_recursion(s + 1);
-		_putchar(*s);
+		return (1 + _strlen_recursion(s + 1));
 	}
 	return (0);
 }
