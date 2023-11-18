@@ -9,6 +9,6 @@
 
 int main(int argc __attribute__((unused)), char *argv[])
 {
-	printf("My name is %s:\n", *argv);
+	printf("My name is %s\n", *argv);
 	return (0);
 }
