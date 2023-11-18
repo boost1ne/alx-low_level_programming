@@ -4,11 +4,11 @@
  * main  - Starting point of program execution
  *@argc: count
  *@argv: string array of command-line arguments
- *Return: 0 Success, 1 Error
+ *Return: Always 0 (success)
 ***/
 
-int main(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
-	printf("My name is %s:\n", argv[0]);
+	printf("My name is %s:\n", *argv);
 	return (0);
 }
