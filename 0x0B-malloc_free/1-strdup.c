@@ -8,6 +8,8 @@
 
 char *_strdup(char *str)
 {
+	char *dupString;
+	int i, j;
 
 	if (str == NULL)
 	{
@@ -15,21 +17,19 @@ char *_strdup(char *str)
 	}
 
 	/*Get the length of the passed string we want to duplicate*/
-	int i;
 
 	while (str[i] != '\0')
 	{
 		i++;/*Here we store the length*/
 	}
 
-	char *dupString = malloc(sizeof(char) * (i + 1)); /*+1 for null terminator*/
+	dupString = malloc(sizeof(char) * (i + 1)); /*+1 for null terminator*/
 
 	if (dupString == NULL)
 	{
 		return (NULL);
 	}
-	int j;
-	
+
 	for (j = 0; str[j] != '\0'; j++)
 	{
 		dupString[j] = str[j];
