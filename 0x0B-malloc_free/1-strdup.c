@@ -1,4 +1,5 @@
-
+#include <stdlib.h>
+#include "main.h"
 /**
  * _strdup - fucntion duplicates string passed in argument
  * @str : input string
@@ -11,7 +12,7 @@ char *_strdup(char *str)
 	int i, j;
 	char *dupString;
 
-	if (str == '\0')
+	if (str == NULL)
 	{
 		return (NULL);
 	}
