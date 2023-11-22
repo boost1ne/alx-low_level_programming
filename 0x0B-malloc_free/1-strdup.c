@@ -17,6 +17,7 @@ char *_strdup(char *str)
 	}
 
 	/*Get the length of the passed string we want to duplicate*/
+	i = 0;
 
 	while (str[i] != '\0')
 	{
@@ -30,7 +31,7 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	for (j = 0; str[j] != '\0'; j++)
+	for (j = 0; str[j]; j++)
 	{
 		dupString[j] = str[j];
 	}
