@@ -1,25 +1,26 @@
 #include "main.h"
-#include <unistd.h>
 
 /**
- * print_binary -  prints the binary representation of a number.
- * @n: a given nmber we want to convert
- *
- * Return: the binary form
-****/
-
+ * print_binary - print binary equivalent of the decimal number
+ * @n: number to be printed in binary
+ */
 void print_binary(unsigned long int n)
 {
-	int bit;
+	int i, count = 0;
+	unsigned long int current;
 
-	if (n)
+	for (i = 63; i >= 0; i--)
 	{
-		if (n >> 1)
-			print_binary(n >> 1);
-		bit = (n & 1) + '0';
-		_putchar(bit);
+		current = n >> i;
+
+		if (current & 1)
+		{
+			_putchar('1');
+			count++;
+		}
+		else if (count)
+			_putchar('0');
 	}
-	else
+	if (!count)
 		_putchar('0');
-	}
 }
