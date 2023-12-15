@@ -15,10 +15,8 @@ void print_binary(unsigned long int n)
 	{
 		int bit = (n & mask) ? 1 : 0;
 
-		printf("%d", bit);
+		_putchar(bit + '0');
 
 		mask >>= 1;
 	}
-
-	printf("\n");
 }
