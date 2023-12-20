@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * read_textfile - Read a text file and prints it to the stdout
  * @filename: Name of the file
@@ -7,33 +6,30 @@
  * Return: The Number of bytes read and write on success, 0 if fails
  */
 
-
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t r, w, o;
+	ssize_t o, r, w;
+	char *buffer;
 
-	char *buff = malloc(sizeof(char) * letters)
-
-	if (!filename)
+	if (filename == NULL)
 		return (0);
 
-
-	if (buff == NULL)
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
 		return (0);
 
 	o = open(filename, O_RDONLY);
-	r = read(o, buff, letters);
-	w = write(STDOUT_FILENO, buff, r);
+	r = read(o, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, r);
 
 	if (o == -1 || r == -1 || w == -1 || w != r)
 	{
-		free(buff);
+		free(buffer);
 		return (0);
 	}
 
-	free(buff);
+	free(buffer);
 	close(o);
 
 	return (w);
-
 }
